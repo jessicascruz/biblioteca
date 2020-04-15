@@ -1,6 +1,6 @@
 # Bookshelf
 
-## Paleta de cores:
+### Paleta de cores:
 
 - Azul petróleo: RGB(95, 130, 134)  => #5F8286;
 - Cinza azulado: RGB(91, 129, 142)  => #5B818E;
@@ -14,6 +14,6 @@
 - Laranja claro: RGB(242, 188, 157) => #F2BC9D;
 - Amarelo claro: RGB(255, 250, 218) => #FFFADA;
 
-## Fonte:
+### Fonte:
 
 [Baloo Bhai 2] (https://fonts.google.com/specimen/Baloo+Bhai+2)
