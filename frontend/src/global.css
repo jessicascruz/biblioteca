@@ -1,0 +1,12 @@
+body {
+    font-family: 'Baloo Bhai 2', sans-serif;
+    color: #42284A;
+}
+
+input {
+    box-shadow: 2px 2px 5px #6F6C7D;
+}
+
+.MuiInputBase-formControl {
+    margin-bottom: 10px;
+}
