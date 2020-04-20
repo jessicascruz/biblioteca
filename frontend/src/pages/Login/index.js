@@ -28,15 +28,11 @@ export default function Login() {
 
   return (
       <Grid container>
-        
         <Grid item xs={12} md={7} sm={12} >
           <img src={loginImg} alt="Imagem Login"/>
         </Grid>
-
-
         <Grid item xs={12} md={5} sm={12} >
            <h1 className={classes.title}>LOGIN</h1>
-
           <form className="form-login">
             <TextField m={2}  label="Usuário" id="usuario" margin="dense" variant="outlined" />
             {/* <a href="#" className={classes.link}>Esqueci a senha</a> */}
@@ -46,11 +42,7 @@ export default function Login() {
               Entrar
             </Button>
           </form>
-
         </Grid>
-          
-
-
       </Grid>
   );
 }
