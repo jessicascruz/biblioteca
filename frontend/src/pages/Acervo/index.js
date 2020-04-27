@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from '../Header';
 // import { useHistory } from 'react-router-dom';
 
 
@@ -10,6 +11,7 @@ export default function Acervo () {
 
     return(
       <div>
+        <Header />
         <h1>Hello World</h1>
         <h1>{usuarioName}</h1>
         <h1>{usuarioId}</h1>

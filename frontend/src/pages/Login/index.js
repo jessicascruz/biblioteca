@@ -1,7 +1,7 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import './styles.css';
-import { makeStyles, TextField, Grid, Button, Snackbar } from '@material-ui/core';
-import MuiAlert from '@material-ui/lab/Alert';
+import { makeStyles, TextField, Grid, Button } from '@material-ui/core';
+import Toast from '../../components/Toast';
 import { useHistory } from 'react-router-dom';
 import loginImg from '../../assets/login.jpg';
 import api from '../../services/api';
@@ -29,9 +29,9 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-function Alert(props) {
-  return <MuiAlert elevation={6} variant="filled" {...props} />;
-}
+// function Alert(props) {
+//   return <MuiAlert elevation={6} variant="filled" {...props} />;
+// }
 
 const Schema = Yup.object().shape({
   email: Yup.string()
@@ -48,26 +48,17 @@ export default function Login(props) {
   const [open, setOpen] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const history = useHistory();
-  const toastRef = useRef(null);
-
-  const handleClose = (event, reason) => {
-    if (reason === 'clickaway') {
-      return;
-    }
-    setOpen(false);
-  };
 
       return (
+
         <Grid container>
         <Grid item xs={12} md={7} sm={12} >
           <img src={loginImg} alt="Imagem Login"/>
         </Grid>
         <Grid item xs={12} md={5} sm={12} >
-        <Snackbar open={open} ref={toastRef} autoHideDuration={6000} anchorOrigin={{ vertical: 'top', horizontal:'right' }} onClose={handleClose}>
-          <Alert onClose={handleClose} severity="error">
-            {errorMessage}
-          </Alert>
-        </Snackbar>
+          <>
+         <Toast open={open} handleClose={() => {setOpen(false)}} severity="error"> {errorMessage} </Toast>
+          
 
            <h1 className={classes.title}>LOGIN</h1>
 
@@ -86,6 +77,7 @@ export default function Login(props) {
 
                     localStorage.setItem('usuarioId', resp.data.id);
                     localStorage.setItem('usuarioName', resp.data.nome);
+                    // localStorage.setItem('usuarioName', resp.data.foto);
 
                     history.push('/acervo');
                   }
@@ -126,7 +118,7 @@ export default function Login(props) {
           </form>
         )}
   </Formik>
-
+    </>
         </Grid>
       </Grid>  
       );
