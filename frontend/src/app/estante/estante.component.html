@@ -1,0 +1,45 @@
+
+
+<!-- <mat-list role="list">
+  <mat-list-item role="listitem" *ngFor="let livro of this.livros">
+    <img src={{livro.volumeInfo.imageLinks.smallThumbnail}} />
+    {{ livro.volumeInfo.title }}
+  </mat-list-item>
+</mat-list> -->
+<!-- 
+<mat-list role="list">
+  <mat-list-item role="listitem" *ngFor="let livro of this.livros">
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{ livro.volumeInfo.title }}</mat-card-title>
+    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src={{livro.volumeInfo.imageLinks.smallThumbnail}} alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <p>
+      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+      bred for hunting.
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>
+
+</mat-list-item>
+</mat-list> -->
+
+<div *ngIf="this.livros" id="f">
+  <div class="container">
+ 
+     <div class="col-md-2 results-container" *ngFor="let book of this.livros">
+        {{book.volumeInfo.title}}
+        <p *ngIf="book.volumeInfo.imageLinks">
+           <img src={{book.volumeInfo.imageLinks.smallT humbnail}} />
+        </p>
+     </div>
+  </div>
+ </div>

@@ -1,0 +1,44 @@
+  <div class="" fxLayout="row" fxLayout.xs="column" fxFlex.sm="column" fxFlexFill>
+
+    <section fxFlex="50" class="sec1" fxFlex.xs="100" fxFlex.md="50" fxFlex.sm="100" fxLayoutAlign="center">
+      <img class="img-login" src="../../assets/login.jpg" alt="">
+    </section>
+
+    <section fxFlex="50" fxLayout="column" class="sec2" fxFlex.xs="100" fxFlex.md="50" fxFlex.sm="100" fxLayoutAlign="center center">
+      
+      <div fxLayout="row">
+        <h1 class="title-login">LOGIN</h1>
+      </div>
+
+      <div class="row" style="margin-right: 15%;">
+
+      <form [formGroup]="this.formLogin" fxLayout="column" fxFlex="100">
+        <div fxFlex="100">
+          <mat-form-field appearance="outline" class="input-login">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" type="email" formControlName="email" required>
+            <mat-icon matSuffix>email</mat-icon>
+          </mat-form-field>
+          <mat-error *ngIf="this.formLogin.controls.email.errors.required">ERROR Email</mat-error>
+        </div>
+
+        <div fxFlex="100">
+        <mat-form-field appearance="outline" class="input-login">
+          <mat-label>Senha</mat-label>
+          <input matInput placeholder="Senha" type="text" formControlName="senha" required>
+          <mat-icon matSuffix>lock</mat-icon>
+        </mat-form-field>
+        <!-- <mat-error *ngIf="this.formLogin.errors ">ERROR Email</mat-error> -->
+        </div>
+
+        <button mat-raised-button color="primary" class="btn-login" (click)="this.validarForm()">
+          <mat-icon>login</mat-icon>
+          Entrar
+        </button>
+      </form>
+
+    </div>
+
+    </section>
+
+  </div>
