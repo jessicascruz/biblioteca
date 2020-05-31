@@ -10,3 +10,10 @@ html, body { height: 100%; }
 /* input {
     box-shadow: 2px 2px 5px #6F6C7D;
 } */
+
+
+.mat-error {
+    margin-top: -15px;
+    margin-bottom: 8px;
+
+}
