@@ -1,10 +1,39 @@
 .sidebar {
     border-right: solid 2px #e5e5e5;
+    height: 100%;
 }
 
 .logo {
     font-family: 'Baloo Bhai 2', cursive;
     font-size: 36px;
-    margin-top: 9%;
+    margin-top: 7%;
     color: #42284A;
+}
+
+.btn-menu {
+    width: 100%;
+    font-size: 16px;
+    color: #42284A;
+}
+
+.btn-selected {
+    background-color: #FFD740;
+    color: #5B818E;
+}
+
+.footer-menu {
+    position: fixed; 
+    bottom:0; 
+    left:0; 
+    margin-left: 8px;
+}
+
+@media (min-width: 500px) and (max-width: 600px) {
+    .logo {
+        font-size: 12px;
+    }
+    .img-logo {
+        width: 15px;
+        height: 15px;
+    }
 }

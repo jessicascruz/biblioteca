@@ -14,6 +14,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import { LoginComponent } from './login/login.component';
 import { EstanteComponent } from './estante/estante.component';
@@ -21,6 +22,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { EmprestimoComponent } from './emprestimo/emprestimo.component';
 import { HomeComponent } from './home/home.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { MetasComponent } from './metas/metas.component';
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
       EstanteComponent,
       EmprestimoComponent,
       HomeComponent,
-      SidebarComponent
+      SidebarComponent,
+      MetasComponent
    ],
    imports: [
       BrowserModule,
@@ -46,7 +49,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
       MatCardModule,
       MatInputModule,
       MatFormFieldModule,
-      MatIconModule
+      MatIconModule,
+      MatSlideToggleModule
    ],
    providers: [],
    bootstrap: [

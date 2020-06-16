@@ -13,7 +13,9 @@
 - Vermelho:      RGB(212, 76, 90)   => #D44C5A;
 - Laranja claro: RGB(242, 188, 157) => #F2BC9D;
 - Amarelo claro: RGB(255, 250, 218) => #FFFADA;
+- Material :     RGB(255, 215, 64)  => #FFD740;
 
 ### Fonte:
 
 [Baloo Bhai 2] (https://fonts.google.com/specimen/Baloo+Bhai+2)
+
