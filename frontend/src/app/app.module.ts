@@ -18,13 +18,19 @@ import { MatIconModule } from '@angular/material/icon';
 import { LoginComponent } from './login/login.component';
 import { EstanteComponent } from './estante/estante.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { EmprestimoComponent } from './emprestimo/emprestimo.component';
+import { HomeComponent } from './home/home.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 @NgModule({
    declarations: [
       AppComponent,
       LoginComponent,
-      EstanteComponent
+      EstanteComponent,
+      EmprestimoComponent,
+      HomeComponent,
+      SidebarComponent
    ],
    imports: [
       BrowserModule,

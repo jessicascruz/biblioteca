@@ -1,0 +1,10 @@
+.sidebar {
+    border-right: solid 2px #e5e5e5;
+}
+
+.logo {
+    font-family: 'Baloo Bhai 2', cursive;
+    font-size: 36px;
+    margin-top: 9%;
+    color: #42284A;
+}

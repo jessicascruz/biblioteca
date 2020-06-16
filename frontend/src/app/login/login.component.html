@@ -16,20 +16,22 @@
         <div fxFlex="100">
           <mat-form-field appearance="outline" class="input-login">
             <mat-label>Email</mat-label>
-            <input matInput placeholder="Email" type="email" formControlName="email" required>
+            <input matInput placeholder="Email" type="email" formControlName="email" (blur)="this.inputError('email')" required>
             <mat-icon matSuffix>email</mat-icon>
           </mat-form-field>
           <mat-error *ngIf="this.formLogin.get('email').hasError('required') && this.submitted">Email é obrigatório</mat-error>
+          <mat-error *ngIf="this.formLogin.get('email').hasError('required') && this.errorEmail">Email é obrigatório</mat-error>
           <mat-error *ngIf="this.formLogin.get('email').hasError('email')">Email inválido</mat-error>
         </div>
 
         <div fxFlex="100">
         <mat-form-field appearance="outline" class="input-login">
           <mat-label>Senha</mat-label>
-          <input matInput placeholder="Senha" type="password" formControlName="senha" required>
+          <input matInput placeholder="Senha" type="password" formControlName="senha" (blur)="this.inputError('senha')" autocomplete="cc-csc" required>
           <mat-icon matSuffix>lock</mat-icon>
         </mat-form-field>
         <mat-error *ngIf="this.formLogin.get('senha').hasError('required') && this.submitted">Senha é obrigatória</mat-error>
+        <mat-error *ngIf="this.formLogin.get('senha').hasError('required') && this.errorSenha">Senha é obrigatória</mat-error>
         <mat-error *ngIf="this.formLogin.get('senha').hasError('minlength')">No mínimo 4 caracteres</mat-error>
         </div>
 
