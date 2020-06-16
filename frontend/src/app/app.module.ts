@@ -15,6 +15,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { LoginComponent } from './login/login.component';
 import { EstanteComponent } from './estante/estante.component';
@@ -50,7 +51,8 @@ import { MetasComponent } from './metas/metas.component';
       MatInputModule,
       MatFormFieldModule,
       MatIconModule,
-      MatSlideToggleModule
+      MatSlideToggleModule,
+      MatTooltipModule
    ],
    providers: [],
    bootstrap: [

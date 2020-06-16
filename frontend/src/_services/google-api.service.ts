@@ -16,7 +16,7 @@ constructor(private http: HttpClient) { }
     busca(livro: string): Observable<any> {
       try {
         // `${environment.apiUrl}/session`, { email, senha }
-        return this.http.get<any>(this.API + livro + '&maxResults=12');
+        return this.http.get<any>(this.API + livro + '&maxResults=5');
       } catch {
         console.log('error');
       }

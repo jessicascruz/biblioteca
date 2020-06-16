@@ -1,9 +1,40 @@
 <div class="tela">
-    <div fxFlex="19">
-      <app-sidebar></app-sidebar>
+  <div fxFlex="19">
+    <app-sidebar></app-sidebar>
+  </div>
+
+  <div fxFlex="79">
+    <div class="container">
+      <div fxLayout="row container">
+        <mat-form-field appearance="outline" class="mt-3" fxFlex="100">
+          <mat-label>Procure um livro pelo nome ou autor</mat-label>
+          <input matInput (keyup.enter)="this.buscarLivros()" [(ngModel)]="this.livro">
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+      </div>
+
+
+      <div fxLayout="container" *ngIf="this.livros">
+        <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xs-4">
+          <div class="card card-book mb-3" fxLayout="row" *ngFor="let book of this.livros">
+            <div fxFlex="40">
+              <img class="img-book img-thumbnail" src={{book.volumeInfo.imageLinks.smallThumbnail}}  alt="Imagem de capa do card">
+            </div>
+            <div fxFlex="60">
+              <span>
+                <h3 class="title-book">{{book.volumeInfo.title}}</h3>
+                <p class="author-book">{{book.volumeInfo.authors}}</p>
+              </span>
+              <div fxLayout="row" fxLayoutAlign="end end" style="margin-top: 64px;">
+                <!-- <mat-icon class="icon-book" matTooltip="Visualizar">visibility</mat-icon>  -->
+                <mat-icon class="icon-book" matTooltip="Adicionar a minha estante">add_circle</mat-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
     </div>
-    
-    <div fxFlex="79">
-      dsasdasdasd
-    </div>
+  </div>
 </div>

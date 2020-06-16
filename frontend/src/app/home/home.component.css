@@ -1,0 +1,36 @@
+.card-book {
+    /* width: 340px; */
+    width: 22rem;
+    height: 14rem;
+    border-radius: 10px;
+    background-color: #E1E6E9;
+    box-shadow: 5px 5px 5px #5B818E;
+    border-style: none;
+}
+
+.img-book {
+    width: 135px;
+    border-radius: 10px;
+}
+
+.title-book {
+    font-size: 22px;
+    text-align: center;
+    font-weight: 700;
+    font-family: 'Baloo Bhai 2', cursive;
+    color: #42284A;
+    cursor: pointer;
+}
+
+.author-book {
+    font-size: 15px;
+    text-align: center;
+    font-family: 'Baloo Bhai 2', cursive;
+    color: #42284A;
+}
+
+.icon-book {
+    margin: 36px 13px 0px 0px;
+    cursor: pointer;
+    color: #42284A;
+}
