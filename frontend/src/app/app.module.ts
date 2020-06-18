@@ -24,6 +24,7 @@ import { EmprestimoComponent } from './emprestimo/emprestimo.component';
 import { HomeComponent } from './home/home.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MetasComponent } from './metas/metas.component';
+import { DetalheLivroComponent } from './detalhe-livro/detalhe-livro.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { MetasComponent } from './metas/metas.component';
       EmprestimoComponent,
       HomeComponent,
       SidebarComponent,
-      MetasComponent
+      MetasComponent,
+      DetalheLivroComponent
    ],
    imports: [
       BrowserModule,

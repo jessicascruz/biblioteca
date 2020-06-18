@@ -8,18 +8,27 @@ import { environment } from 'src/environments/environment';
 })
 export class GoogleApiService {
 
-public API = 'https://www.googleapis.com/books/v1/volumes?q=';
+public apiBook = 'https://www.googleapis.com/books/v1/volumes?q=';
+public apiISBN = 'https://www.googleapis.com/books/v1/volumes?q=isbn:';
 
 constructor(private http: HttpClient) { }
 
 
-    busca(livro: string): Observable<any> {
+    buscarLivro(livro: string): Observable<any> {
       try {
-        // `${environment.apiUrl}/session`, { email, senha }
-        return this.http.get<any>(this.API + livro + '&maxResults=5');
+        return this.http.get<any>(this.apiBook + livro + '&maxResults=5');
       } catch {
         console.log('error');
       }
     }
+
+    buscaISBN(isbn: string): Observable<any> {
+      try {
+        return this.http.get<any>(this.apiISBN + isbn + '&maxResults=1');
+      } catch {
+        console.log('error');
+      }
+    }
+
 
 }

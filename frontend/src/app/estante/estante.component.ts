@@ -15,7 +15,7 @@ export class EstanteComponent implements OnInit {
   retorno(): void { }
 
   ngOnInit(): void {
-     this.googleApi.busca('javascript')
+     this.googleApi.buscarLivro('javascript')
         .subscribe( data => {
           console.log(data);
           this.livros = data.items;

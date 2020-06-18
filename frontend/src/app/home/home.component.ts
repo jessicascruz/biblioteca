@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, SimpleChanges, OnInit } from '@angular/core';
 import { GoogleApiService } from 'src/_services/google-api.service';
 
 @Component({
@@ -6,21 +6,35 @@ import { GoogleApiService } from 'src/_services/google-api.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnChanges {
 
   public livro: string;
   public livros: any[] = [];
 
+
   constructor(private googleApi: GoogleApiService) { }
 
-  buscarLivros() {
-    this.googleApi.busca(this.livro)
-      .subscribe(data => {
-        this.livros = data.items;
-    });
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('changes', changes);
   }
 
-  ngOnInit() {
+  buscarLivros() {
+    this.googleApi.buscarLivro(this.livro)
+      .subscribe(data => {
+        this.livros = data.items;
+      },
+      error => { console.log('erro');
+      });
+  }
+
+  ngOnInit(): void {
+    this.googleApi.buscarLivro('teste')
+      .subscribe(data => {
+          this.livros = data.items;
+      },
+      error => { console.log('erro');
+      });
   }
 
 }
