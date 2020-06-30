@@ -6,16 +6,24 @@
   <div fxFlex="79">
 
     <div class="container">
-      <div *ngIf="this.livro" style="margin-top: 7%">
-
+      <div *ngIf="this.livro" style="margin-top: 5%">
+        
 
               <div fxLayout="row">
                   <div fxFlex.sm="100" fxFlex.md="100" fxFlex.lg="100" fxFlex.xl="100" fxFlex.xs="100">
                       <div class="card detalhe-card-book">
-                          <div class="card-header text-center">
-                              <h3 class="detalhe-title-book">{{livro.volumeInfo.title}}</h3>
-                              <h5 class="titulo-autor text-center">{{livro.volumeInfo.authors}}</h5>
-                          </div>
+                        
+                          <div class="card-header">
+                            <div fxLayout="row">
+                            <div class="col-11">
+                              <h3 class="detalhe-title-book text-center">{{livro.volumeInfo.title}}</h3>
+                              <h4 class="titulo-autor text-center">{{livro.volumeInfo.authors}}</h4>
+                            </div>
+                            <div class="col-1 d-flex justify-content-end">
+                              <mat-icon class="icon-status-book" matTooltip="lido">bookmark</mat-icon>
+                            </div>
+                        </div>
+                      </div>
                           <div class="card-body">
                               <div class="row">
                                   <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-4">
@@ -24,26 +32,37 @@
                                       </blockquote>
                                   </div>
                                   <div class="col-12 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+
+                                    <div fxLayout="row">
+                                      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                                      <button mat-icon-button color="secundary" matTooltip="PDF" aria-label="Botão PDF">
+                                        <mat-icon>picture_as_pdf</mat-icon>
+                                      </button>
+                                      <button mat-icon-button color="accent" matTooltip="Mobi" aria-label="Botão ebook">
+                                        <mat-icon>book</mat-icon>
+                                      </button>
+                                      <button mat-icon-button (click)="this.favoritar()" [color]="this.favorito ? 'warn' : ''" matTooltip="Favorito" aria-label="Botão favorito">
+                                        <mat-icon>favorite</mat-icon>
+                                      </button>
+                                      <button mat-icon-button color="secundary" matTooltip="Emprestado" aria-label="Botão favorito">
+                                        <mat-icon>sync_alt</mat-icon>
+                                      </button>
+                                    </div>
+                                    <div class="col-12 col-sm-8 col-md-8 col-lg-8 col-xl-8" fxLayoutAlign="end center">
+                                      <button mat-raised-button color="primary" (click)="openDialog()">
+                                        <mat-icon>add</mat-icon>
+                                        Adicionar a estante
+                                      </button>
+                                    </div>
+                                  </div>
+
+                                  <div fxLayout="row">
+                                    <div class="col-12 mt-5">
+                                      <h4 class="font-weight-bold">Descrição:</h4> 
+                                        <p class="resumo-livro">{{livro.volumeInfo.description}}</p>
+                                    </div>
+                                  </div>
   
-                                      <div class="form-check form-check-inline">
-                                          <input class="form-check-input" type="checkbox" id="lido" value="option1">
-                                          <label class="form-check-label" for="lido">Lido</label>
-                                      </div>
-                                      <span style="color: #f5593d">*Emprestado!</span>
-                                      <span>Romance</span>
-  
-                                      <h6 class="resumo-livro">Resumo:</h6>
-                                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet tortor est.
-                                          Integer a leo scelerisque, rutrum odio eu, dictum orci. Donec sit amet ante non
-                                          eros euismod consectetur. Aliquam lacinia, nisl in dictum pellentesque, ipsum
-                                          nunc scelerisque erat, vitae vulputate tellus velit eu justo. Suspendisse
-                                          potenti.
-                                          Sed lacinia eleifend massa a rutrum. Ut efficitur quis lorem id dictum. Ut nulla
-                                          justo, efficitur sit amet lorem ut, malesuada consequat nibh. Nulla interdum
-                                          magna sit amet arcu feugiat, vel varius erat molestie. Aliquam sit amet viverra
-                                          risus, in pretium odio. Phasellus leo leo, tristique posuere egestas eget,
-                                          dictum
-                                          eu quam. Sed nec neque dui. </p>
                                   </div>
                               </div>
                           </div>

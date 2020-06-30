@@ -1,0 +1,82 @@
+<div class="text-center">
+  <h2 mat-dialog-title>Adicionar livro</h2>
+</div>
+<mat-dialog-content class="mat-typography">
+
+  <form [formGroup]="this.form">
+    <div fxLayout="row">
+      <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+        <img src={{this.image}} alt="Capa do livro">
+
+
+        <div fxLayout="row">
+          <mat-form-field appearance="outline" style="width: 135px;">
+            <mat-label>Status</mat-label>
+            <mat-select>
+              <mat-option [value]="item" *ngFor="let item of this.status">{{item}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div fxLayout="row">
+          <button mat-icon-button (click)="this.favoritar()" [color]="this.favorito ? 'warn' : ''" matTooltip="Favorito" aria-label="Botão favorito">
+            <mat-icon class="mr-2">favorite</mat-icon>
+            <span>Favorito</span>
+          </button>
+        </div>
+
+      </div>
+
+      <div class="col-12 col-sm-9 col-md-9 col-lg-9 col-xl-9">
+        <div fxLayout="row">
+          <mat-form-field appearance="outline" fxFlex="100">
+            <mat-label>Nome do livro</mat-label>
+            <input matInput formControlName="nome">
+          </mat-form-field>
+        </div>
+
+        <div fxLayout="row">
+          <mat-form-field appearance="outline" fxFlex="100">
+            <mat-label>Autor</mat-label>
+            <input matInput formControlName="autor">
+          </mat-form-field>
+        </div>
+
+        <div fxLayout="row">
+        <section class="col-12" fxLayoutAlign="center center">
+          <mat-checkbox class="col-4" (click)="this.exibirLinkPdf()">PDF</mat-checkbox>
+          <mat-checkbox class="col-4" (click)="this.exibirLinkEbook()">eBook</mat-checkbox>
+          <mat-checkbox class="col-4">Físico</mat-checkbox>
+        </section>
+      </div>
+
+      <div fxLayout="row" *ngIf="this.pdf">
+        <mat-form-field appearance="outline" fxFlex="100" >
+          <mat-label>Link PDF</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row" *ngIf="this.eBook">
+        <mat-form-field appearance="outline" fxFlex="100">
+          <mat-label>Link eBook</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row">
+        <mat-form-field appearance="outline" fxFlex="100">
+          <mat-label>Descrição</mat-label>
+          <textarea matInput formControlName="descricao"></textarea>
+        </mat-form-field>
+      </div>
+
+
+      </div>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancelar</button>
+  <button mat-raised-button color="primary">Adicionar</button>
+</mat-dialog-actions>

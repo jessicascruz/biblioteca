@@ -1,14 +1,40 @@
 .detalhe-card-book {
-
+    box-shadow: 10px 10px 17px 10px #E1E6E9;
 }
 
 .detalhe-title-book {
     font-family: 'Baloo Bhai 2', cursive;
     color: #42284A;
     font-size: 30px;
-    
 }
 
 .detalhe-author-book {
+    font-family: 'Baloo Bhai 2', cursive;
+    color: #42284A;
+}
 
+.resumo-livro {
+    max-height: 200px;
+    overflow: scroll;
+}
+
+.icon-status-book {
+    font-size: 40px;
+}
+
+.capa {
+    width: 220px;
+    height: 282px;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+::-webkit-scrollbar-thumb {
+    background: #673AB7; 
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
 }

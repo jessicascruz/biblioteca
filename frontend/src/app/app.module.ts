@@ -16,6 +16,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSelectModule } from '@angular/material/select';
 
 import { LoginComponent } from './login/login.component';
 import { EstanteComponent } from './estante/estante.component';
@@ -25,6 +28,7 @@ import { HomeComponent } from './home/home.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MetasComponent } from './metas/metas.component';
 import { DetalheLivroComponent } from './detalhe-livro/detalhe-livro.component';
+import { AddLivroComponent } from './add-livro/add-livro.component';
 
 
 @NgModule({
@@ -36,7 +40,8 @@ import { DetalheLivroComponent } from './detalhe-livro/detalhe-livro.component';
       HomeComponent,
       SidebarComponent,
       MetasComponent,
-      DetalheLivroComponent
+      DetalheLivroComponent,
+      AddLivroComponent
    ],
    imports: [
       BrowserModule,
@@ -54,7 +59,10 @@ import { DetalheLivroComponent } from './detalhe-livro/detalhe-livro.component';
       MatFormFieldModule,
       MatIconModule,
       MatSlideToggleModule,
-      MatTooltipModule
+      MatTooltipModule,
+      MatDialogModule,
+      MatCheckboxModule,
+      MatSelectModule
    ],
    providers: [],
    bootstrap: [
